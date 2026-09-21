@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SENAI Parking | Projeto</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="topbar">
+      <a class="brand" href="painel.html">
+        <div class="brand-mark">S</div>
+        <div>SENAI Parking<small>Projeto de inovação</small></div>
+      </a>
+      <nav class="topnav">
+        <a href="painel.html">Painel</a>
+        <a href="vagas.html">Vagas</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="minhas-vagas.html">Minhas vagas</a>
+        <a href="sancoes.html">Sanções</a>
+      </nav>
+    </div>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="side-title">Projeto</div>
+        <a class="side-link active" href="sobre.html">ⓘ Sobre o projeto</a>
+        <a class="side-link" href="painel.html">▦ Voltar ao painel</a>
+      </aside>
+      <main class="content">
+        <div class="title-row">
+          <div>
+            <div class="eyebrow">SAGA SENAI de Inovação</div>
+            <div class="title">Estacionamento inteligente</div>
+            <div class="subtitle">Projeto criado para reduzir o tempo de procura por vagas e melhorar a informação dada aos usuários.</div>
+          </div>
+        </div>
+        <div class="grid g2">
+          <section class="card pad">
+            <div class="section-head">
+              <h2>Problema</h2>
+            </div>
+            <p style="line-height:1.65;color:#536270">Atualmente, não há uma forma confiável de informar a disponibilidade de vagas no período noturno nos blocos A, C e H. O projeto propõe mapear as vagas e mostrar, de forma visual, quais estão livres, ocupadas ou agendadas.</p>
+          </section>
+          <section class="card pad">
+            <div class="section-head">
+              <h2>Benefícios</h2>
+            </div>
+            <div class="list">
+              <div class="list-item"><strong>Menor tempo na busca</strong></div>
+              <div class="list-item"><strong>Informações mais assertivas</strong></div>
+              <div class="list-item"><strong>Melhor ocupação das vagas</strong></div>
+              <div class="list-item"><strong>Menos deslocamento desnecessário</strong></div>
+            </div>
+          </section>
+        </div>
+        <section class="card pad" style="margin-top:16px">
+          <div class="section-head">
+            <h2>Arquitetura proposta</h2>
+            <span>Do sensor ao mapa</span>
+          </div>
+          <div class="grid g3">
+            <div>
+              <div class="eyebrow">01</div>
+              <h3>Sensor ultrassônico</h3>
+              <p style="color:var(--muted);line-height:1.5">Detecta a presença ou ausência de um veículo em cada vaga.</p>
+            </div>
+            <div>
+              <div class="eyebrow">02</div>
+              <h3>ESP32 / Wi‑Fi</h3>
+              <p style="color:var(--muted);line-height:1.5">Envia os dados de ocupação para o sistema.</p>
+            </div>
+            <div>
+              <div class="eyebrow">03</div>
+              <h3>Site + banco de dados</h3>
+              <p style="color:var(--muted);line-height:1.5">Atualiza o mapa e permite o agendamento de vagas disponíveis.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

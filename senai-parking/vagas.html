@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SENAI Parking | Vagas</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="page-visualizar">
+    <div class="topbar">
+      <a class="brand" href="painel.html">
+        <div class="brand-mark">S</div>
+        <div>SENAI Parking<small>Blumenau • Vagas</small></div>
+      </a>
+      <nav class="topnav">
+        <a href="painel.html">Painel</a>
+        <a class="active" href="vagas.html">Vagas</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="minhas-vagas.html">Minhas vagas</a>
+        <a href="sancoes.html">Sanções</a>
+      </nav>
+    </div>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="side-title">Operação</div>
+        <a class="side-link" href="painel.html">▦ Painel geral</a>
+        <a class="side-link active" href="vagas.html">⌗ Visualizar vagas</a>
+        <a class="side-link" href="agendar.html">＋ Novo agendamento</a>
+        <a class="side-link" href="minhas-vagas.html">◷ Meus agendamentos</a>
+        <a class="side-link" href="sancoes.html">⚠ Sanções</a>
+        <div class="side-title" style="margin-top:18px">Projeto</div>
+        <a class="side-link" href="sobre.html">ⓘ Sobre o projeto</a>
+      </aside>
+      <main class="content">
+        <div class="title-row">
+          <div>
+            <div class="eyebrow">Mapa operacional</div>
+            <div class="title">Visualizar vagas</div>
+            <div class="subtitle">Selecione uma vaga na barra lateral para consultar identificação e situação.</div>
+          </div>
+        </div>
+        <div class="map-layout">
+          <section class="card map-card">
+            <div class="map-toolbar">
+              <div class="switch">
+                <button class="active" data-block="H">Bloco H</button>
+                <button data-block="A">Bloco A</button>
+                <button data-block="C">Bloco C</button>
+              </div>
+              <div class="legend">
+                <span><i class="i-green"></i>Livre</span>
+                <span><i class="i-red"></i>Ocupada</span>
+                <span><i class="i-yellow"></i>Agendada</span>
+              </div>
+            </div>
+            <div id="map" class="map-wrap"></div>
+          </section>
+          <aside class="card detail">
+            <div class="spot-selector-panel">
+              <div class="eyebrow">Selecione uma vaga</div>
+              <label class="selector-label" for="spotSelector">Vaga</label>
+              <select id="spotSelector" class="spot-selector">
+                <option value="">Selecione uma vaga...</option>
+              </select>
+              <div class="selector-hint">Os indicadores coloridos no mapa mostram o estado de cada vaga. Ao selecionar uma vaga, os detalhes aparecem abaixo.</div>
+            </div>
+            <div id="spotDetail">
+              <div class="empty">Selecione uma vaga na barra acima para visualizar ID e situação.</div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="js/app.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const q = new URLSearchParams(location.search).get('bloco');
+        if (q && ['A', 'C', 'H'].includes(q)) {
+          document.querySelectorAll('[data-block]').forEach(x => x.classList.toggle('active', x.dataset.block === q));
+          renderMap(q);
+        }
+      });
+    </script>
+  </body>
+</html>

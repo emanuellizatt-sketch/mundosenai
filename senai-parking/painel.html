@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SENAI Parking | Painel</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="topbar">
+      <a class="brand" href="painel.html">
+        <div class="brand-mark">S</div>
+        <div>SENAI Parking<small>Blumenau • Monitoramento</small></div>
+      </a>
+      <nav class="topnav">
+        <a class="active" href="painel.html">Painel</a>
+        <a href="vagas.html">Vagas</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="minhas-vagas.html">Minhas vagas</a>
+        <a href="sancoes.html">Sanções</a>
+      </nav>
+    </div>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="side-title">Operação</div>
+        <a class="side-link active" href="painel.html">▦ Painel geral</a>
+        <a class="side-link" href="vagas.html">⌗ Visualizar vagas</a>
+        <a class="side-link" href="agendar.html">＋ Novo agendamento</a>
+        <a class="side-link" href="minhas-vagas.html">◷ Meus agendamentos</a>
+        <a class="side-link" href="sancoes.html">⚠ Sanções</a>
+        <div class="side-title" style="margin-top:18px">Projeto</div>
+        <a class="side-link" href="sobre.html">ⓘ Sobre o projeto</a>
+      </aside>
+      <main class="content">
+        <div class="title-row">
+          <div>
+            <div class="eyebrow">Monitoramento em tempo real</div>
+            <div class="title">Painel de estacionamento</div>
+            <div class="subtitle">Acompanhe a ocupação dos blocos A, C e H e encontre uma vaga sem rodar pela unidade.</div>
+          </div>
+          <a class="btn btn-primary" href="vagas.html">Visualizar mapa</a>
+        </div>
+        <div class="grid g4">
+          <div class="card pad metric green">
+            <div class="label">Vagas livres</div>
+            <div class="num" data-stat="green">0</div>
+            <div class="foot">Disponíveis agora</div>
+          </div>
+          <div class="card pad metric red">
+            <div class="label">Vagas ocupadas</div>
+            <div class="num" data-stat="red">0</div>
+            <div class="foot">Detectadas no mapa</div>
+          </div>
+          <div class="card pad metric yellow">
+            <div class="label">Vagas agendadas</div>
+            <div class="num" data-stat="yellow">0</div>
+            <div class="foot">Reservas ativas</div>
+          </div>
+          <div class="card pad metric blue">
+            <div class="label">Meus agendamentos</div>
+            <div class="num" data-reservas>0</div>
+            <div class="foot">Neste protótipo</div>
+          </div>
+        </div>
+        <div class="grid g2" style="margin-top:16px">
+          <section class="card pad">
+            <div class="section-head">
+              <h2>Blocos monitorados</h2>
+              <span>Selecionados no projeto</span>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <strong>Bloco A</strong>
+                  <div style="font-size:12px;color:var(--muted)">Mapa de vagas e disponibilidade</div>
+                </div>
+                <a class="badge blue" href="vagas.html?bloco=A">Abrir mapa</a>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>Bloco C</strong>
+                  <div style="font-size:12px;color:var(--muted)">Mapa de vagas e disponibilidade</div>
+                </div>
+                <a class="badge blue" href="vagas.html?bloco=C">Abrir mapa</a>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>Bloco H</strong>
+                  <div style="font-size:12px;color:var(--muted)">Mapa de vagas e disponibilidade</div>
+                </div>
+                <a class="badge blue" href="vagas.html?bloco=H">Abrir mapa</a>
+              </div>
+            </div>
+          </section>
+          <section class="card pad">
+            <div class="section-head">
+              <h2>Como funciona</h2>
+              <span>Fluxo do projeto</span>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <strong>1. Sensor identifica</strong>
+                  <div style="font-size:12px;color:var(--muted)">O sensor ultrassônico detecta a presença do veículo.</div>
+                </div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>2. ESP envia</strong>
+                  <div style="font-size:12px;color:var(--muted)">O ESP32 envia a ocupação por Wi‑Fi.</div>
+                </div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>3. Site atualiza</strong>
+                  <div style="font-size:12px;color:var(--muted)">A vaga aparece no mapa com a cor correspondente.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

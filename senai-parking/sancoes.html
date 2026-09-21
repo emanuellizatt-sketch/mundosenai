@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SENAI Parking | Sanções</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="topbar">
+      <a class="brand" href="painel.html">
+        <div class="brand-mark">S</div>
+        <div>SENAI Parking<small>Blumenau • Sanções</small></div>
+      </a>
+      <nav class="topnav">
+        <a href="painel.html">Painel</a>
+        <a href="vagas.html">Vagas</a>
+        <a href="agendar.html">Agendar</a>
+        <a href="minhas-vagas.html">Minhas vagas</a>
+        <a class="active" href="sancoes.html">Sanções</a>
+      </nav>
+    </div>
+    <div class="page">
+      <aside class="sidebar">
+        <div class="side-title">Operação</div>
+        <a class="side-link" href="painel.html">▦ Painel geral</a>
+        <a class="side-link" href="vagas.html">⌗ Visualizar vagas</a>
+        <a class="side-link" href="agendar.html">＋ Novo agendamento</a>
+        <a class="side-link" href="minhas-vagas.html">◷ Meus agendamentos</a>
+        <a class="side-link active" href="sancoes.html">⚠ Sanções</a>
+        <div class="side-title" style="margin-top:18px">Projeto</div>
+        <a class="side-link" href="sobre.html">ⓘ Sobre o projeto</a>
+      </aside>
+      <main class="content">
+        <div class="title-row">
+          <div>
+            <div class="eyebrow">Controle de comparecimento</div>
+            <div class="title">Sanções</div>
+            <div class="subtitle">Registre ocorrências quando o usuário não comparecer ao horário reservado.</div>
+          </div>
+        </div>
+        <div class="grid g4">
+          <div class="card pad metric red">
+            <div class="label">Ocorrências abertas</div>
+            <div class="num" data-sancoes>0</div>
+            <div class="foot">Ainda não encerradas</div>
+          </div>
+          <div class="card pad metric blue">
+            <div class="label">Tolerância</div>
+            <div class="num">15</div>
+            <div class="foot">minutos após o horário</div>
+          </div>
+          <div class="card pad metric yellow">
+            <div class="label">1ª ocorrência</div>
+            <div class="num" style="font-size:24px">Aviso</div>
+            <div class="foot">Advertência</div>
+          </div>
+          <div class="card pad metric blue">
+            <div class="label">Reincidência</div>
+            <div class="num" style="font-size:24px">24h+</div>
+            <div class="foot">Bloqueio progressivo</div>
+          </div>
+        </div>
+        <div class="grid g2" style="margin-top:16px">
+          <section class="card pad">
+            <div class="section-head">
+              <h2>Agendamentos</h2>
+              <span>Marcar não comparecimento</span>
+            </div>
+            <div id="noShowList" class="list"></div>
+          </section>
+          <section class="card pad">
+            <div class="section-head">
+              <h2>Regra do protótipo</h2>
+              <span>Exemplo de aplicação</span>
+            </div>
+            <div class="rule-box">
+              <p><strong>Até 15 min:</strong> a reserva continua dentro da tolerância.</p>
+              <p><strong>Depois da tolerância:</strong> o operador pode registrar "não compareceu".</p>
+              <p><strong>1ª ocorrência:</strong> advertência.</p>
+              <p><strong>2ª ocorrência:</strong> bloqueio por 24 horas.</p>
+              <p><strong>3ª ocorrência:</strong> bloqueio por 7 dias.</p>
+              <p><strong>4ª ocorrência:</strong> bloqueio por 30 dias.</p>
+              <small>Essas regras são demonstrativas para o protótipo e podem ser ajustadas pela equipe/SENAI.</small>
+            </div>
+          </section>
+        </div>
+        <section class="card pad" style="margin-top:16px">
+          <div class="section-head">
+            <h2>Histórico de ocorrências</h2>
+            <span>Registro local do protótipo</span>
+          </div>
+          <div class="table-scroll">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Ocorrência</th>
+                  <th>Vaga</th>
+                  <th>Data</th>
+                  <th>Motivo</th>
+                  <th>Sanção</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="sanctionTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

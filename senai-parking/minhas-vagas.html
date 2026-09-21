@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SENAI Parking | Minhas vagas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Barra Superior -->
+  <div class="topbar">
+    <a class="brand" href="painel.html">
+      <div class="brand-mark">S</div>
+      <div>SENAI Parking<small>Blumenau • Reservas</small></div>
+    </a>
+    <nav class="topnav">
+      <a href="painel.html">Painel</a>
+      <a href="vagas.html">Vagas</a>
+      <a href="agendar.html">Agendar</a>
+      <a class="active" href="minhas-vagas.html">Minhas vagas</a>
+      <a href="sancoes.html">Sanções</a>
+    </nav>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div class="page">
+    <aside class="sidebar">
+      <div class="side-title">Operação</div>
+      <a class="side-link" href="painel.html">▦ Painel geral</a>
+      <a class="side-link" href="vagas.html">⌗ Visualizar vagas</a>
+      <a class="side-link" href="agendar.html">＋ Novo agendamento</a>
+      <a class="side-link active" href="minhas-vagas.html">◷ Meus agendamentos</a>
+      <a class="side-link" href="sancoes.html">⚠ Sanções</a>
+    </aside>
+
+    <main class="content">
+      <div class="title-row">
+        <div>
+          <div class="eyebrow">Reservas</div>
+          <div class="title">Minhas vagas</div>
+          <div class="subtitle">Gerencie os agendamentos feitos no protótipo.</div>
+        </div>
+        <a href="agendar.html" class="btn btn-primary">Novo agendamento</a>
+      </div>
+
+      <section class="card pad">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Vaga</th>
+              <th>Bloco</th>
+              <th>Data</th>
+              <th>Horário</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody id="reservationTable"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Componentes de Toast e Scripts -->
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
