@@ -99,7 +99,7 @@ const parkingBlocks = {
       ['H-53', 'green'],
       ['H-54', 'yellow'],
       ['H-55', 'green'],
-      ['H-56', 'red']
+      ['H-56', 'red'],
       ['H-57', 'green'],
       ['H-58', 'red'],
       ['H-59', 'green'],
@@ -333,10 +333,17 @@ function setupBlockSwitch() {
   document.querySelectorAll('[data-block]').forEach(btn => btn.addEventListener('click', () => {
     document.querySelectorAll('[data-block]').forEach(x => x.classList.remove('active'));
     btn.classList.add('active');
-    renderMap(btn.dataset.block);
+
+    const block = btn.dataset.block;
+
+    currentBlock = block;
+    renderMap(block);
   }));
+
   const sel = document.getElementById('spotSelector');
-  if (sel) sel.addEventListener('change', e => onSpotSelectorChange(e.target.value));
+  if (sel) {
+    sel.addEventListener('change', e => onSpotSelectorChange(e.target.value));
+  }
 }
 
 function setupLogin() {
@@ -353,7 +360,21 @@ function pageInit() {
   setupLogin();
   setupBlockSwitch();
   const map = document.getElementById('map');
-  if (map) renderMap(document.querySelector('[data-block].active')?.dataset.block || 'H');
+ 
+  if (map) {
+  document.querySelectorAll('[data-block]').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  const hButton = document.querySelector('[data-block="H"]');
+
+  if (hButton) {
+    hButton.classList.add('active');
+  }
+
+  renderMap('H');
+}
+
   const reservations = getReservations();
   document.querySelectorAll('[data-reservas]').forEach(el => el.textContent = reservations.filter(r => r.active).length);
   const stats = { green: 0, red: 0, yellow: 0 };
