@@ -79,7 +79,7 @@
                   <strong>Bloco C</strong>
                   <div style="font-size:12px;color:var(--muted)">Mapa de vagas e disponibilidade</div>
                 </div>
-               <a class="badge blue" href="agendar.html">Abrir mapa</a>
+                <a class="badge blue" href="agendar.html">Abrir mapa</a>
               </div>
               <div class="list-item">
                 <div>
@@ -93,25 +93,37 @@
           <section class="card pad">
             <div class="section-head">
               <h2>Como funciona</h2>
-              <span>Fluxo do projeto</span>
+              <span>Arduino + sistema</span>
             </div>
             <div class="list">
               <div class="list-item">
                 <div>
                   <strong>1. Sensor identifica</strong>
-                  <div style="font-size:12px;color:var(--muted)">O sensor ultrassônico detecta a presença do veículo.</div>
+                  <div style="font-size:12px;color:var(--muted)">O HC-SR04 mede a distância e identifica a presença de um veículo na vaga.</div>
                 </div>
               </div>
               <div class="list-item">
                 <div>
-                  <strong>2. ESP envia</strong>
-                  <div style="font-size:12px;color:var(--muted)">O ESP32 envia a ocupação por Wi‑Fi.</div>
+                  <strong>2. Arduino processa</strong>
+                  <div style="font-size:12px;color:var(--muted)">O Arduino lê os sensores, compara as distâncias e determina se cada vaga está livre ou ocupada.</div>
                 </div>
               </div>
               <div class="list-item">
                 <div>
-                  <strong>3. Site atualiza</strong>
-                  <div style="font-size:12px;color:var(--muted)">A vaga aparece no mapa com a cor correspondente.</div>
+                  <strong>3. USB/Serial envia ao computador</strong>
+                  <div style="font-size:12px;color:var(--muted)">As leituras são enviadas do Arduino para o computador por comunicação USB/Serial.</div>
+                </div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>4. Site atualiza</strong>
+                  <div style="font-size:12px;color:var(--muted)">O sistema recebe o estado das vagas e atualiza os indicadores e o mapa automaticamente.</div>
+                </div>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>5. Agendamento completa o estado</strong>
+                  <div style="font-size:12px;color:var(--muted)">O agendamento vem do sistema: livre = verde, agendada = amarelo e ocupada = vermelho.</div>
                 </div>
               </div>
             </div>
